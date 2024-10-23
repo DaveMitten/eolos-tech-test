@@ -16,8 +16,6 @@ export function addRetries(callbackToRetry: (...args: any) => Promise<any>) {
         }
       }
     }
-    if (newError) {
-      throw newError;
-    }
+    throw newError;
   };
 }

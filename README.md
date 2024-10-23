@@ -20,6 +20,8 @@
 
    b. Text input changes should not lead to immediate re-renders of the list. Instead, re-renders should be limited via debounce functionality to a maximum of once every 800 milliseconds, causing the products list to refetch.
 
+   c. The mobx store should only contain logic for storing and updating local UI states. API data should live elsewhere.
+
 3. Imagine that the project depends on an asynchronous function which could be fired from multiple contexts, but race conditions could happen if multiple instances are awaiting resolution at the same time. There is an unfinished function **_src/functions/noParallelCalls.ts_**. Finish this function so that the mock function it accepts cannot have multiple asynchronous operations running at once (calling it in quick succession should return the same result) and the jest tests pass.
 
 4. There is an unfinished custom hook **_src/hooks/useRunOnUnmount.ts_**. Finish it so that the callback only executes on unmounting of the component (not at any other point of the lifecycle of the parent component), but that on execution the callback is not stale. Write some tests to confirm that it works as intended, installing and configuring React Testing Library.
